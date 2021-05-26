@@ -1,0 +1,166 @@
+$Brightorange: hsl(31, 77%, 52%);
+$Darkcyan: hsl(184, 100%, 22%);
+$Verydarkcyan: hsl(179, 100%, 13%);
+$Transparentwhite: hsla(0, 0%, 100%, 0.75);
+$Verylightgray : hsl(0, 0%, 95%);
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container {
+    width: 86vw;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+body {
+    background-color: $Verylightgray;
+    padding: 5.5rem 0;
+    font-size: 15px;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    .card__item {
+        padding: 2.8rem;
+        h1 {
+            font-size: 2.5rem;
+            padding: 1.5rem 0;
+            color: $Verylightgray;
+            text-transform: uppercase;
+            font-family: 'Big Shoulders Display', cursive;
+        }
+        p {
+            color: $Transparentwhite;
+            font-family: 'Lexend Deca', sans-serif;
+        }
+        
+        &:nth-child(1){
+            background-color: $Brightorange;
+            a {
+                color: $Brightorange;
+                border: 2px solid $Brightorange;
+            }
+        }
+        &:nth-child(2){
+            background-color: $Darkcyan;
+            a {
+                color: $Darkcyan;
+                border: 2px solid $Darkcyan
+            }
+        }
+        &:nth-child(3){
+            background-color: $Verydarkcyan;
+            a {
+                color: $Verydarkcyan;
+                border: 2px solid $Verydarkcyan
+            }
+        }
+        a {
+            margin-top: 1.875rem;
+            display: inline-block;
+            text-decoration: none;
+            background-color: $Verylightgray;
+            padding: .7rem 2rem;
+            border-radius: 3rem;
+            font-family: 'Lexend Deca', sans-serif;
+            &:hover {
+                background-color: transparent;
+                border-color: $Verylightgray;
+                color: $Verylightgray;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) { 
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 900px;
+       .card__item { 
+          a {
+            margin-top: 5rem;
+          }
+        }
+    }
+}
